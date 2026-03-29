@@ -1,0 +1,7 @@
+cryptography
+websockets
+fastapi
+uvicorn
+msgpack
+qrcode
+pillow

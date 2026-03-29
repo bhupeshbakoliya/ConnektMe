@@ -1,0 +1,24 @@
+# SECURITY MODEL:
+# -----------------------------
+# The identity key is encrypted using a machine-local secret stored on disk.
+# This provides protection against casual file access, but NOT against a
+# fully compromised system.
+#
+# Anyone with access to both:
+#   - identity.key
+#   - machine.secret
+# can fully recover the private key.
+#
+# This is an intentional design choice to avoid requiring a user passphrase.
+#
+# FUTURE:
+# If passphrase-based protection is added, HKDF MUST be replaced with a
+# password-hard KDF such as Argon2 or scrypt.
+
+
+Security Assumptions
+
+- Identity keys are protected using machine-bound encryption.
+- The system assumes the host device is trusted.
+- No protection is provided against full system compromise.
+- No passphrase-based encryption is currently implemented.
